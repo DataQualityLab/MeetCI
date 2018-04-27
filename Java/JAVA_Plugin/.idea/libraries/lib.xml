@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/kxml2-2.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/neuroph-core-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fuzzyJ15a.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/neuroph-imgrec-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/neuroph-ocr-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/neuroph-samples-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/neuroph-adapters-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/kxml2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/neuroph-contrib-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-nop-1.7.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jess.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsr94.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fuzzy.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

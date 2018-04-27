@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XESSPlus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MLP.xsd">
+  <classification>
+    <datafile>Iris_New.data</datafile>
+    <input>4</input>
+    <output>1</output>
+    <numberOfLayers>3</numberOfLayers>
+    <algorithm>
+      <MultiLayerPerceptron>
+        <hiddenLayerActivation>FANN_SIGMOID_SYMMETRIC</hiddenLayerActivation>
+	<hiddenActivationSteepness>1</hiddenActivationSteepness>
+        <outputLayerActivation>FANN_SIGMOID_SYMMETRIC</outputLayerActivation>
+	<outputActivationSteepness>1</outputActivationSteepness>
+	<trainStopFuction>FANN_STOPFUNC_BIT</trainStopFuction>
+        <hiddenNeurons>7</hiddenNeurons>
+	<desiredError>0</desiredError>
+	<maxEpochs>10000</maxEpochs>
+	<epochsBetweenReports>100</epochsBetweenReports>
+      </MultiLayerPerceptron>
+    </algorithm>
+  </classification>
+</XESSPlus>

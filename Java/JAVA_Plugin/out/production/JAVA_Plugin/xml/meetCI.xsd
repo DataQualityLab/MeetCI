@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="MeetCI" type="MeetCI"/>
+
+	<xs:complexType name="MeetCI" >
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="MachineLearning" type="MachineLearning"/>
+				<xs:element name="ExpertSystem" type="ExpertSystem"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MachineLearning">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="classification" type="classification"></xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MultiLayerPerceptron">
+		<xs:sequence>
+			<xs:element name="inputLayerActivation" default="Linear" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Linear"/>
+						<xs:enumeration value="Ramp"/>
+						<xs:enumeration value="Step"/>
+						<xs:enumeration value="Sigmoid"/>
+						<xs:enumeration value="Tanh"/>
+						<xs:enumeration value="Gaussian"/>
+						<xs:enumeration value="Trapezoid"/>
+						<xs:enumeration value="Sgn"/>
+						<xs:enumeration value="Sin"/>
+						<xs:enumeration value="Log"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="hiddenLayerActivation" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Linear"/>
+						<xs:enumeration value="Ramp"/>
+						<xs:enumeration value="Step"/>
+						<xs:enumeration value="Sigmoid"/>
+						<xs:enumeration value="Tanh"/>
+						<xs:enumeration value="Gaussian"/>
+						<xs:enumeration value="Trapezoid"/>
+						<xs:enumeration value="Sgn"/>
+						<xs:enumeration value="Sin"/>
+						<xs:enumeration value="Log"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="hiddenLayers">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="([0-9])+(,([0-9])+)"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="outputLayerActivation" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Linear"/>
+						<xs:enumeration value="Ramp"/>
+						<xs:enumeration value="Step"/>
+						<xs:enumeration value="Sigmoid"/>
+						<xs:enumeration value="Tanh"/>
+						<xs:enumeration value="Gaussian"/>
+						<xs:enumeration value="Trapezoid"/>
+						<xs:enumeration value="Sgn"/>
+						<xs:enumeration value="Sin"/>
+						<xs:enumeration value="Log"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<!--
+				<xs:element name="connectivity">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="FULL"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+			-->
+			<xs:element name="momentum" type="xs:decimal"/>
+			<xs:element name="epochs" type="xs:int"/>
+			<xs:element name="learningRate" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RadialBasisFunctionNetwork">
+		<xs:sequence>
+			<xs:element name="hiddenNeurons" type="xs:int"/>
+			<xs:element name="outputLayerActivation" >
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Linear"/>
+						<xs:enumeration value="Ramp"/>
+						<xs:enumeration value="Step"/>
+						<xs:enumeration value="Sigmoid"/>
+						<xs:enumeration value="Tanh"/>
+						<xs:enumeration value="Gaussian"/>
+						<xs:enumeration value="Trapezoid"/>
+						<xs:enumeration value="Sgn"/>
+						<xs:enumeration value="Sin"/>
+						<xs:enumeration value="Log"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="momentum" type="xs:decimal"/>
+			<xs:element name="epochs" type="xs:int"/>
+			<xs:element name="learningRate" type="xs:decimal"/>
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="RecurrentNeuralNetwork">
+        <xs:sequence>
+            <xs:element name="RNN_Type">
+                <xs:simpleType >
+                    <xs:restriction  base="xs:string">
+                        <xs:enumeration value="Elman"/>
+                        <xs:enumeration value="Jordan"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="hiddenLayerActivation" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Linear"/>
+                        <xs:enumeration value="Ramp"/>
+                        <xs:enumeration value="Step"/>
+                        <xs:enumeration value="Sigmoid"/>
+                        <xs:enumeration value="Tanh"/>
+                        <xs:enumeration value="Gaussian"/>
+                        <xs:enumeration value="Trapezoid"/>
+                        <xs:enumeration value="Sgn"/>
+                        <xs:enumeration value="Sin"/>
+                        <xs:enumeration value="Log"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="outputLayerActivation" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Linear"/>
+                        <xs:enumeration value="Ramp"/>
+                        <xs:enumeration value="Step"/>
+                        <xs:enumeration value="Sigmoid"/>
+                        <xs:enumeration value="Tanh"/>
+                        <xs:enumeration value="Gaussian"/>
+                        <xs:enumeration value="Trapezoid"/>
+                        <xs:enumeration value="Sgn"/>
+                        <xs:enumeration value="Sin"/>
+                        <xs:enumeration value="Log"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="epochs" type="xs:int"/>
+            <xs:element name="momentum" type="xs:decimal"/>
+            <xs:element name="learningRate" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+	<xs:complexType name="RandomForest">
+		<xs:sequence>
+			<xs:element name="nTrees" type="xs:int"/>
+			<xs:choice>
+				<xs:element name="maxDepth" type="xs:int"/>
+				<xs:element name="maxLeafNodes" type="xs:int"/>
+			</xs:choice>
+			<xs:element name="minSamplesSplit" type="xs:int" />
+			<xs:element name="minSamplesLeaf" type="xs:int" />
+			<xs:element name="minFractionLeaf" type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SupportVectorMachine">
+		<xs:sequence>
+			<xs:element name="kernel">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Linear"/>
+						<xs:enumeration value="RBF"/>
+						<xs:enumeration value="Sigmoid"/>
+						<xs:enumeration value="Poly"/>
+						<xs:enumeration value="Precomputed"/>
+						<xs:enumeration value="Trapezoid"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="degree" type="xs:int" />
+			<xs:element name="gamma" type="xs:double" />
+			<xs:element name="coef" type="xs:double" />
+			<xs:element name="tol" type="xs:double" />
+			<xs:element name="maxIter" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="classification">
+		<xs:sequence>
+			<xs:element name="datafile" type="xs:string"/>
+			<xs:element name="input" type="xs:int"/>
+			<xs:element name="output" type="xs:int"/>
+			<xs:element name="classes" type="xs:int"/>
+			<xs:element name="split" type="xs:decimal"/>
+			<xs:element name="delimiter" type="xs:string"/>
+			<xs:element name="algorithm">
+				<xs:complexType>
+					<xs:choice maxOccurs="1">
+                        <xs:element name="RadialBasisFunctionNetwork" type="RadialBasisFunctionNetwork"/>
+                        <xs:element name="MultiLayerPerceptron" type="MultiLayerPerceptron"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+	<!-- comments -->
+	<!--<xs:element name="comment" type="xs:string"/>-->
+
+	<!-- clause elements -->
+<!--	<xs:element name="clause" type="clauseType"/>
+	<xs:element name="greaterThan" type="greaterThanType" substitutionGroup="clause"/>
+	<xs:element name="greaterThanOrEqual" type="greaterThanOrEqualType" substitutionGroup="clause"/>
+	<xs:element name="lessThan" type="lessThanType" substitutionGroup="clause"/>
+	<xs:element name="lessThanOrEqual" type="lessThanOrEqualType" substitutionGroup="clause"/>
+	<xs:element name="equal" type="equalType" substitutionGroup="clause"/>
+	<xs:element name="notEqual" type="notEqualType" substitutionGroup="clause"/>
+	<xs:element name="between" type="betweenType" substitutionGroup="clause"/>
+	<xs:element name="notBetween" type="betweenType" substitutionGroup="clause"/>
+	<xs:element name="or" type="orType" substitutionGroup="clause"/>
+	<xs:element name="and" type="andType" substitutionGroup="clause"/>-->
+
+	<xs:complexType name="clauseType" abstract="true"/>
+
+	<xs:complexType name="greaterThanType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:attribute name="value1" type="xs:string"/>
+				<xs:attribute name="value2" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="greaterThanOrEqualType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:attribute name="value1" type="xs:string"/>
+				<xs:attribute name="value2" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="lessThanType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:attribute name="value1" type="xs:string"/>
+				<xs:attribute name="value2" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="lessThanOrEqualType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:attribute name="value1" type="xs:string"/>
+				<xs:attribute name="value2" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="equalType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:attribute name="value1" type="xs:string"/>
+				<xs:attribute name="value2" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="notEqualType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:attribute name="value1" type="xs:string"/>
+				<xs:attribute name="value2" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="betweenType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:attribute name="value" type="xs:string"/>
+				<xs:attribute name="min" type="xs:string"/>
+				<xs:attribute name="max" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="notBetweenType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:attribute name="value" type="xs:string"/>
+				<xs:attribute name="min" type="xs:string"/>
+				<xs:attribute name="max" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="orType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:sequence>
+					<xs:element name="clause" type="clauseType" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="andType">
+		<xs:complexContent>
+			<xs:extension base="clauseType">
+				<xs:sequence>
+					<xs:element name="clause" type="clauseType" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- fact types -->
+
+<!--	<xs:element name="fact" type="factType"/>
+	<xs:element name="predicate" type="predicateType" substitutionGroup="fact"/>
+	<xs:element name="struct" type="structType" substitutionGroup="fact"/>
+	<xs:element name="instance" type="instanceType" substitutionGroup="fact"/>-->
+
+	<xs:complexType name="factType" abstract="true">
+		<xs:attribute name="name" type="xs:string"/>
+	</xs:complexType>
+
+	<xs:complexType name="predicateType">
+		<xs:complexContent>
+			<xs:extension base="factType">
+				<xs:attribute name="value" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="structType">
+		<xs:complexContent>
+			<xs:extension base="factType">
+				<xs:sequence>
+					<xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="field" minOccurs="1" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="name" type="xs:string"/>
+							<xs:attribute name="type" type="xs:string" use="optional"/>
+							<xs:attribute name="initialValue" type="xs:string" use="optional"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="instanceType">
+		<xs:complexContent>
+			<xs:extension base="factType">
+				<xs:sequence>
+					<xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="field" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="name" type="xs:string"/>
+							<xs:attribute name="value" type="xs:string" use="optional"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="type" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- main elements -->
+
+<!--	<xs:element name="action" type="actionType"/>
+	<xs:element name="set" type="setType" substitutionGroup="action"/>
+	<xs:element name="runRule" type="runRuleType" substitutionGroup="action"/>-->
+
+	<xs:complexType name="actionType" abstract="true"/>
+
+	<xs:complexType name="setType">
+		<xs:complexContent>
+			<xs:extension base="actionType">
+				<xs:attribute name="name" type="xs:string"/>
+				<xs:attribute name="value" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="runRuleType">
+		<xs:complexContent>
+			<xs:extension base="actionType">
+				<xs:sequence>
+					<xs:element name="argument" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="name" type="xs:string"/>
+							<xs:attribute name="value" type="xs:string" use="optional"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ExpertSystem">
+		<xs:sequence>
+			<xs:element  name="comment" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="fact" type="factType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="rule" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element  name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+						<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="name" type="xs:string"/>
+								<xs:attribute name="type" type="xs:string"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="if">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="clause" type="clauseType"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="then">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="action" type="actionType"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="else" minOccurs="0" maxOccurs="1">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="action" type="actionType"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="name" type="xs:string" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

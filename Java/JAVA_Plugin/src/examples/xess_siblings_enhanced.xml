@@ -1,0 +1,255 @@
+<MeetCI>
+	<ExpertSystem>
+		<struct name="Person">
+			<field name="first-name" type="string"/>
+			<field name="middle-initial" type="string"/>
+			<field name="last-name" type="string"/>
+			<field name="sex" type="string"/>
+			<field name="age" type="integer"/>
+		</struct>
+
+		<struct name="Parents">
+			<field name="parent1" type="Person"/>
+			<field name="parent2" type="Person"/>
+			<field name="child" type="Person"/>
+		</struct>
+
+		<struct name="Father">
+			<field name="father" type="Person"/>
+			<field name="child" type="Person"/>
+		</struct>
+
+		<struct name="Son">
+			<field name="parent" type="Person"/>
+			<field name="son" type="Person"/>
+		</struct>
+
+		<struct name="Mother">
+			<field name="mother" type="Person"/>
+			<field name="child" type="Person"/>
+		</struct>
+
+		<struct name="Daughter">
+			<field name="parent" type="Person"/>
+			<field name="daughter" type="Person"/>
+		</struct>
+
+		<struct name="Siblings">
+			<field name="eldest" type="Person"/>
+			<field name="youngest" type="Person"/>
+		</struct>
+
+		<struct name="Half-Siblings">
+			<field name="eldest" type="Person"/>
+			<field name="youngest" type="Person"/>
+		</struct>
+
+		<instance name="Bobby-J-StJacques" type="Person">
+			<field name="first-name" value="Bobby"/>
+			<field name="middle-initial" value="J"/>
+			<field name="last-name" value="StJacques"/>
+			<field name="sex" value="M"/>
+			<field name="age" value="31"/>
+		</instance>
+
+		<instance name="Kimberly-D-StJacques" type="Person">
+			<field name="first-name" value="Kimberly"/>
+			<field name="middle-initial" value="D"/>
+			<field name="last-name" value="StJacques"/>
+			<field name="sex" value="F"/>
+			<field name="age" value="31"/>
+		</instance>
+
+		<instance name="Stacey-M-Collins" type="Person">
+			<field name="first-name" value="Stacey"/>
+			<field name="middle-initial" value="M"/>
+			<field name="last-name" value="Collins"/>
+			<field name="sex" value="F"/>
+			<field name="age" value="34"/>
+		</instance>
+
+		<instance name="Connie-M-Nenni" type="Person">
+			<field name="first-name" value="Connie"/>
+			<field name="middle-initial" value="M"/>
+			<field name="last-name" value="Nenni"/>
+			<field name="sex" value="F"/>
+			<field name="age" value="41"/>
+		</instance>
+
+		<instance name="Robert-J-StJacques" type="Person">
+			<field name="first-name" value="Robert"/>
+			<field name="middle-initial" value="J"/>
+			<field name="last-name" value="StJacques"/>
+			<field name="sex" value="M"/>
+			<field name="age" value="55"/>
+		</instance>
+
+		<instance name="Kathleen-M-McCall" type="Person">
+			<field name="first-name" value="Kathleen"/>
+			<field name="middle-initial" value="M"/>
+			<field name="last-name" value="McCall"/>
+			<field name="sex" value="F"/>
+			<field name="age" value="54"/>
+		</instance>
+
+		<instance name="Linda-D-Mcguire" type="Person">
+			<field name="first-name" value="Linda"/>
+			<field name="middle-initial" value="D"/>
+			<field name="last-name" value="Mcguire"/>
+			<field name="sex" value="F"/>
+			<field name="age" value="55"/>
+		</instance>
+
+		<instance name="William-B-Fox" type="Person">
+			<field name="first-name" value="William"/>
+			<field name="middle-initial" value="B"/>
+			<field name="last-name" value="Fox"/>
+			<field name="sex" value="M"/>
+			<field name="age" value="65"/>
+		</instance>
+
+		<instance name="Lynn-J-Smith" type="Person">
+			<field name="first-name" value="Lynn"/>
+			<field name="middle-initial" value="J"/>
+			<field name="last-name" value="Miller"/>
+			<field name="sex" value="M"/>
+			<field name="age" value="65"/>
+		</instance>
+
+		<instance name="Bobby" type="Parents">
+			<field name="parent1" value="Robert"/>
+			<field name="parent2" value="Kathleen"/>
+			<field name="child" value="Bobby"/>
+		</instance>
+
+		<instance name="Kimberly" type="Parents">
+			<field name="parent1" value="William"/>
+			<field name="parent2" value="Linda"/>
+			<field name="child" value="Kimberly"/>
+		</instance>
+
+		<instance name="Stacey" type="Parents">
+			<field name="parent1" value="Robert"/>
+			<field name="parent2" value="Kathleen"/>
+			<field name="child" value="Stacey"/>
+		</instance>
+
+		<instance name="Connie" type="Parents">
+			<field name="parent1" value="Lynn"/>
+			<field name="parent2" value="Linda"/>
+			<field name="child" value="Connie"/>
+		</instance>
+
+		<rule name="father-rule">
+			<parameter name="parent" type="Person"/>
+			<parameter name="child" type="Person"/>
+			<parameter name="relationship" type="Parents"/>
+			<if>
+				<and>
+					<equal value1="parent.sex" value2="M"/>
+					<equal value1="relationship.child" value2="child.first-name"/>
+					<or>
+						<equal value1="relationship.parent1" value2="parent.first-name"/>
+						<equal value1="relationship.parent2" value2="parent.first-name"/>
+					</or>
+				</and>
+			</if>
+			<then>
+				<setInstance type="Father">
+					<field name="father" value="parent.first-name"/>
+					<field name="child" value="child.first-name"/>
+				</setInstance>
+			</then>
+		</rule>
+
+		<rule name="mother-rule">
+			<parameter name="parent" type="Person"/>
+			<parameter name="child" type="Person"/>
+			<parameter name="relationship" type="Parents"/>
+			<if>
+				<and>
+					<equal value1="parent.sex" value2="F"/>
+					<equal value1="relationship.child" value2="child.first-name"/>
+					<or>
+						<equal value1="relationship.parent1" value2="parent.first-name"/>
+						<equal value1="relationship.parent2" value2="parent.first-name"/>
+					</or>
+				</and>
+			</if>
+			<then>
+				<setInstance type="Mother">
+					<field name="mother" value="parent.first-name"/>
+					<field name="child" value="child.first-name"/>
+				</setInstance>
+			</then>
+		</rule>
+
+		<rule name="father-son-rule">
+			<parameter name="father" type="Father"/>
+			<parameter name="child" type="Person"/>
+			<if>
+				<and>
+					<equal value1="father.child" value2="child.first-name"/>
+					<equal value1="child.sex" value2="M"/>
+				</and>
+			</if>
+			<then>
+				<setInstance type="Son">
+					<field name="parent" value="father.father"/>
+					<field name="son" value="child.first-name"/>
+				</setInstance>
+			</then>
+		</rule>
+
+		<rule name="mother-son-rule">
+			<parameter name="mother" type="Mother"/>
+			<parameter name="child" type="Person"/>
+			<if>
+				<and>
+					<equal value1="mother.child" value2="child.first-name"/>
+					<equal value1="child.sex" value2="M"/>
+				</and>
+			</if>
+			<then>
+				<setInstance type="Son">
+					<field name="parent" value="mother.mother"/>
+					<field name="son" value="child.first-name"/>
+				</setInstance>
+			</then>
+		</rule>
+
+		<rule name="father-daughter-rule">
+			<parameter name="father" type="Father"/>
+			<parameter name="child" type="Person"/>
+			<if>
+				<and>
+					<equal value1="father.child" value2="child.first-name"/>
+					<equal value1="child.sex" value2="F"/>
+				</and>
+			</if>
+			<then>
+				<setInstance type="Daughter">
+					<field name="parent" value="father.father"/>
+					<field name="daughter" value="child.first-name"/>
+				</setInstance>
+			</then>
+		</rule>
+
+		<rule name="mother-daughter-rule">
+			<parameter name="mother" type="Mother"/>
+			<parameter name="child" type="Person"/>
+			<if>
+				<and>
+					<equal value1="mother.child" value2="child.first-name"/>
+					<equal value1="child.sex" value2="F"/>
+				</and>
+			</if>
+			<then>
+				<setInstance type="Daughter">
+					<field name="parent" value="mother.mother"/>
+					<field name="daughter" value="child.first-name"/>
+				</setInstance>
+			</then>
+		</rule>
+	</ExpertSystem>
+</MeetCI>

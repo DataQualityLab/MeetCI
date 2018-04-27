@@ -1,0 +1,20 @@
+<XESSPlus>
+  <classification>
+    <datafile>string</datafile>
+    <input>3</input>
+    <output>3</output>
+    <classes>3</classes>
+    <split>1000.00</split>
+    <delimiter>string</delimiter>
+    <algorithm>
+      <!--You have a CHOICE of the next 2 items at this level-->
+      <RadialBasisFunctionNetwork>
+        <hiddenNeurons>3</hiddenNeurons>
+        <outputLayerActivation>Gaussian</outputLayerActivation>
+        <momentum>1000.00</momentum>
+        <epochs>3</epochs>
+        <learningRate>1000.00</learningRate>
+      </RadialBasisFunctionNetwork>
+    </algorithm>
+  </classification>
+</XESSPlus>

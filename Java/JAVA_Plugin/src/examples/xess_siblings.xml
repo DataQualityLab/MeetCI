@@ -1,0 +1,113 @@
+<xess>
+	<predicate name="test-predicate" value="test-value"/>
+	<struct name="Parents">
+		<field name="father" type="string"/>
+		<field name="mother" type="string"/>
+		<field name="child" type="string"/>
+	</struct>
+	
+	<struct name="Siblings">
+		<field name="first-child" type="string"/>
+		<field name="second-child" type="string"/>
+	</struct>
+	
+	<struct name="Half-Siblings">
+		<field name="first-child" type="string"/>
+		<field name="second-child" type="string"/>
+	</struct>
+	
+	<struct name="Full-Siblings">
+		<field name="first-child" type="string"/>
+		<field name="second-child" type="string"/>
+	</struct>
+	
+	<instance name="Bobby" type="Parents">
+		<field name="father" value="Robert"/>
+		<field name="mother" value="Kathleen"/>
+		<field name="child" value="Bobby"/>
+	</instance>
+	
+	<instance name="Stacey" type="Parents">
+		<field name="father" value="Robert"/>
+		<field name="mother" value="Kathleen"/>
+		<field name="child" value="Stacey"/>
+	</instance>
+	
+	<instance name="Kimberly" type="Parents">
+		<field name="father" value="Bill"/>
+		<field name="mother" value="Linda"/>
+		<field name="child" value="Kimberly"/>
+	</instance>
+	
+	<instance name="Connie" type="Parents">
+		<field name="father" value="Joe"/>
+		<field name="mother" value="Linda"/>
+		<field name="child" value="Connie"/>
+	</instance>
+	
+	
+	<rule name="siblings-rule">
+		<parameter name="arg1" type="Parents"/>
+		<parameter name="arg2" type="Parents"/>
+		<if>
+			<and>
+				<or>
+					<equal value1="arg1.father" value2="arg2.father"/>
+					<equal value1="arg1.mother" value2="arg2.mother"/>
+				</or>
+				<notEqual value1="arg1.child" value2="arg2.child"/>
+			</and>
+		</if>
+		<then>
+			<setInstance type="Siblings">
+				<field name="first-child" value="arg1.child"/>
+				<field name="second-child" value="arg2.child"/>
+			</setInstance>
+		</then>
+	</rule>
+	
+
+	<rule name="full-siblings-rule">
+		<parameter name="arg1" type="Parents"/>
+		<parameter name="arg2" type="Parents"/>
+		<if>
+			<and>
+				<equal value1="arg1.father" value2="arg2.father"/>
+				<equal value1="arg1.mother" value2="arg2.mother"/>
+				<notEqual value1="arg1.child" value2="arg2.child"/>
+			</and>
+		</if>
+		<then>
+			<setInstance type="Full-Siblings">
+				<field name="first-child" value="arg1.child"/>
+				<field name="second-child" value="arg2.child"/>
+			</setInstance>
+		</then>
+	</rule>
+	
+	<rule name="half-siblings-rule">
+		<parameter name="arg1" type="Parents"/>
+		<parameter name="arg2" type="Parents"/>
+		<if>
+			<and>
+				<or>
+					<and>
+						<equal value1="arg1.father" value2="arg2.father"/>
+						<notEqual value1="arg1.mother" value2="arg2.mother"/>
+					</and>
+					<and>
+						<notEqual value1="arg1.father" value2="arg2.father"/>
+						<equal value1="arg1.mother" value2="arg2.mother"/>
+					</and>
+				</or>
+				<notEqual value1="arg1.child" value2="arg2.child"/>
+			</and>
+		</if>
+		<then>
+			<setInstance type="Half-Siblings">
+				<field name="first-child" value="arg1.child"/>
+				<field name="second-child" value="arg2.child"/>
+			</setInstance>
+		</then>
+	</rule>
+</xess>

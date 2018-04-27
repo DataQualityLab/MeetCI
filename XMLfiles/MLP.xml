@@ -1,0 +1,23 @@
+<MeetCI>
+  <MachineLearning>
+    <classification>
+      <datafile>TrainingFiles\Iris.csv</datafile>
+      <input>4</input>
+      <output>1</output>
+      <classes>3</classes>
+      <split>0.7</split>
+      <delimiter>,</delimiter>
+      <algorithm>
+        <MultiLayerPerceptron>
+          <inputLayerActivation>Linear</inputLayerActivation>
+          <hiddenLayerActivation>Sigmoid</hiddenLayerActivation>
+          <hiddenLayers>10</hiddenLayers>
+          <outputLayerActivation>Sigmoid</outputLayerActivation>
+          <momentum>0.01</momentum>
+          <epochs>30</epochs>
+          <learningRate>0.01</learningRate>
+        </MultiLayerPerceptron>
+      </algorithm>
+    </classification>
+  </MachineLearning>
+</MeetCI>

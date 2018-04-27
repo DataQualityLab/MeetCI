@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xess>
+
+	<relation name="born">
+		<atom>Charles</atom>
+		<atom>Elizabeth II</atom>
+		<atom>Philip</atom>
+	</relation>
+	
+	<relation name="born">
+		<atom>Anne</atom>
+		<atom>Elizabeth II</atom>
+		<atom>Philip</atom>
+	</relation>
+	
+	<relation name="born">
+		<atom>Edward</atom>
+		<atom>Elizabeth II</atom>
+		<atom>Philip</atom>
+	</relation>
+	
+	<relation name="born">
+		<atom>Dianna</atom>
+		<atom>Frances</atom>
+		<atom>Edward Spencer</atom>
+	</relation>
+	
+	<relation name="born">
+		<atom>William</atom>
+		<atom>Dianna</atom>
+		<atom>Charles</atom>
+	</relation>
+	
+	<relation name="born">
+		<atom>Henry</atom>
+		<atom>Dianna</atom>
+		<atom>Charles</atom>
+	</relation>
+</xess>

@@ -1,0 +1,605 @@
+<MeetCI>
+	<ExpertSystem>
+	<!-- How many times per year is risk assessment performed (0_52)? -->
+	<predicate name="risk_assessment" value="0.0"/>
+	<!-- What percentage of systems are assessed and documented as of this time (0_100%)? -->
+	<predicate name="risk_system_coverage" value="0.0"/>
+	<!-- What percentage of systems have been tested for security controls in the past year (0_100%)? -->
+	<predicate name="control_system_coverage" value="0.0"/>
+	<!-- What percentage of systems were found to have at least one 
+		security control weakness (0_100%)? -->
+	<predicate name="control_weaknesses" value="0.0"/>
+	<!-- What percentage of systems are certified and accredited (0_100%)? -->
+	<predicate name="certified_systems" value="0.0"/>
+	<!-- What percentage of systems follow a documented security plan (0_100%)? -->
+	<predicate name="documented_plan_systems" value="0.0"/>
+	<!-- What percentage of systems divide sensitive functions among
+		different individuals? -->
+	<predicate name="divided_sensitive_functions" value="0.0"/>
+	<!-- What percentage of users have undergone background screening (0_100%)? -->
+	<predicate name="screened_users" value="0.0"/>
+	<!-- What percentage of deposits and withdrawls of 
+		physical data tapes are logged (0_100%)? -->
+	<predicate name="data_tapes_logged" value="0.0"/>
+	<!-- How many of the following measures are taken to limit
+		physical access to data lines (0_5)?  
+		(lock, keypad, biometrics, keycard, other) -->
+	<predicate name="physical_access_restrictions" value="0.0"/>
+	<!-- On what percentage of portable systems has encryption
+		software been installed (0_100%)? -->
+	<predicate name="portable_systems_encrypted" value="0.0"/>
+	<!-- What percentage of critical systems have backup
+		systems established (0_100%)? -->
+	<predicate name="critical_systems_backup" value="0.0"/>
+	<!-- What percentage of critical systems have a
+		contingency plan (in case of failure) (0_100%)? -->
+	<predicate name="critical_systems_contingency" value="0.0"/>
+	<!-- What percentage of systems have restrictions on who
+		performs maintenance/repairs (0_100%)? -->
+	<predicate name="system_maintenance_restrictions" value="0.0"/>
+	<!-- For what percentage of systems is maintenance activity
+		logged (0_100%)? -->
+	<predicate name="system_maintenance_logs" value="0.0"/>
+	<!-- What percentage of software changes are documented 
+		and approved (0_100%)? -->
+	<predicate name="software_changes_approved" value="0.0"/>
+	<!-- What percentage systems were scanned for vulnerabilities
+		last year (0_100%)? -->
+	<predicate name="systems_scanned_for_vulnerabilities" value="0.0"/>
+	<!-- What percentage of scanned systems needed to be patched (0_100%)? -->
+	<predicate name="vulnerable_systems_patched" value="0.0"/>
+	<!-- What percentage of systems use virus protection (0_100%)? -->
+	<predicate name="systems_virus_protection" value="0.0"/>
+	<!-- What percentage of virus protected systems use automated
+		virus protection (0_100%)? -->
+	<predicate name="systems_automated_virus_protection" value="0.0"/>
+	<!-- What percentage of virus protected systems are configured to
+		update virus protection software automatically (0_100%)? -->
+	<predicate name="systems_automated_updates" value="0.0"/>
+	<!-- What percentage of systems are password protected (0_100%)? -->
+	<predicate name="systems_password_protected" value="0.0"/>
+	<!-- How many times per year are passwords required
+		to be changed (0_365)? -->
+	<predicate name="passwords_changed" value="0.0"/>
+	<!-- What percentage of systems use default vendor passwords (0_100%)? -->
+	<predicate name="vendor_passwords_used" value="0.0"/>
+	<!-- What percentage of user IDs are shared by more than one person (0_100%)? -->
+	<predicate name="shared_user_ids" value="0.0"/>
+	<!-- How many of the following are required for passwords (0_5)?
+		(upper case letters, lower case letters, numbers, symbols, other) -->
+	<predicate name="password_requirements" value="0.0"/>
+	
+	<!-- ratings: 0 (worst) _ 100 (best) -->
+	<predicate name="risk" value="0.0"/>
+	<predicate name="security_controls" value="0.0"/>
+	<predicate name="certification_planning" value="0.0"/>
+	<predicate name="personnel_security" value="0.0"/>
+	<predicate name="physical_protection" value="0.0"/>
+	<predicate name="contingency_planning" value="0.0"/>
+	<predicate name="maintenance" value="0.0"/>
+	<predicate name="data_integrity" value="0.0"/>
+	<predicate name="identification_authentication" value="0.0"/>
+	<predicate name="overall_security" value="0.0"/>
+	
+	<!-- rules -->
+	<rule name="risk_assessment_rule_001">
+		<if>
+			<and>
+				<greaterThan value1="@risk_assessment" value2="0.0"/>
+				<lessThan value1="@risk_assessment" value2="6.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="risk" value="@risk+25.0"/>
+		</then>
+	</rule>
+	<rule name="risk_assessment_rule_002">
+		<if>
+			<greaterThanOrEqual value1="@risk_assessment" value2="6.0"/>
+		</if>
+		<then>
+			<set name="risk" value="@risk+50.0"/>
+		</then>
+	</rule>
+	<rule name="risk_assessment_rule_003">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@risk_system_coverage" value2="50.0"/>
+				<lessThan value1="@risk_system_coverage" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="risk" value="@risk+25.0"/>
+		</then>
+	</rule>
+	<rule name="risk_assessment_rule_004">
+		<if>
+			<greaterThanOrEqual value1="@risk_system_coverage" value2="75.0"/>
+		</if>
+		<then>
+			<set name="risk" value="@risk+50.0"/>
+		</then>
+	</rule>
+	
+	<rule name="control_assessment_rule_001">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@control_system_coverage" value2="50.0"/>
+				<lessThan value1="@control_system_coverage" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+	   		<set name="security_controls" value="@security_controls+25.0"/>
+	  	</then>
+	</rule>
+	<rule name="control_assessment_rule_002">
+		<if>
+			<greaterThanOrEqual value1="@control_system_coverage" value2="75.0"/>
+		</if>
+		<then>
+			<set name="security_controls" value="@security_controls+50.0"/>
+		</then>
+	</rule>
+	<rule name="control_assessment_rule_003">
+		<if>
+			<equal value1="@control_weaknesses" value2="0.0"/>
+		</if>
+		<then>
+			<set name="security_controls" value="@security_controls+50.0"/>
+		</then>
+	</rule>
+	<rule name="control_assessment_rule_004">
+		<if>
+			<and>
+				<greaterThan value1="@control_weaknesses" value2="0.0"/>
+				<lessThan value1="@control_weaknesses" value2="3.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="security_controls" value="@security_controls+25.0"/>
+		</then>
+	</rule>
+	
+	<rule name="certification_planning_rule_001">
+		<if>
+			<and>
+				<greaterThan value1="@certified_systems" value2="50.0"/>
+				<lessThan value1="@certified_systems" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="certification_planning" value="@certification_planning+25.0"/>
+		</then>
+	</rule>
+	<rule name="certification_planning_rule_002">
+		<if>
+			<greaterThanOrEqual value1="@certified_systems" value2="75.0"/>
+		</if>
+		<then>
+			<set name="certification_planning" value="@certification_planning+50.0"/>
+		</then>
+	</rule>
+	<rule name="certification_planning_rule_003">
+		<if>
+			<and>
+				<greaterThan value1="@documented_plan_systems" value2="50.0"/>
+				<lessThan value1="@documented_plan_systems" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="certification_planning" value="@certification_planning+25.0"/>
+		</then>
+	</rule>
+	<rule name="certification_planning_rule_004">
+		<if>
+			<greaterThanOrEqual value1="@documented_plan_systems" value2="75.0"/>
+		</if>
+		<then>
+			<set name="certification_planning" value="@certification_planning+50.0"/>
+		</then>
+	</rule>
+	
+	<rule name="personnel_security_rule_001">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@divided_sensitive_functions" value2="0.0"/>
+				<lessThan value1="@divided_sensitive_functions" value2="40.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="personnel_security" value="@personnel_security+50.0"/>
+		</then>
+	</rule>
+	<rule name="personnel_security_rule_002">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@divided_sensitive_functions" value2="40.0"/>
+				<lessThanOrEqual value1="@divided_sensitive_functions" value2="80.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="personnel_security" value="@personnel_security+25.0"/>
+		</then>
+	</rule>
+	<rule name="personnel_security_rule_003">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@screened_users" value2="50.0"/>
+				<lessThan value1="@screened_users" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="personnel_security" value="@personnel_security+25.0"/>
+		</then>
+	</rule>
+	<rule name="personnel_security_rule_004">
+		<if>
+			<greaterThanOrEqual value1="@screened_users" value2="75.0"/>
+		</if>
+		<then>
+			<set name="personnel_security" value="@personnel_security+50.0"/>
+		</then>
+	</rule>
+	
+	<rule name="physical_protection_rule_001">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@data_tapes_logged" value2="50.0"/>
+				<lessThan value1="data_tapes_logged" value2="75.0"/>
+			</and>	
+		</if>
+		<then>
+			<set name="physical_protection" value="@physical_protection+16.5"/>
+		</then>
+	</rule>
+	<rule name="physical_protection_rule_002">
+		<if>
+			<greaterThanOrEqual value1="@data_tapes_logged" value2="75.0"/>
+		</if>
+		<then>
+			<set name="physical_protection" value="@physical_protection+33"/>
+		</then>
+	</rule>
+	<rule name="physical_protection_rule_003">
+		<if>
+			<and>
+				<greaterThan value1="@physical_access_restrictions" value2="0.0"/>
+				<lessThan value1="@physical_access_restrictions" value2="4.0"/>
+			</and>	
+		</if>
+		<then>
+			<set name="physical_protection" value="@physical_protection+16.5"/>
+		</then>
+	</rule>
+	<rule name="physical_protection_rule_004">
+		<if>
+			<greaterThanOrEqual value1="@physical_access_restrictions" value2="4.0"/>
+		</if>
+		<then>
+			<set name="physical_protection" value="@physical_protection+33"/>
+		</then>
+	</rule>
+	<rule name="physical_protection_rule_005">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@portable_systems_encrypted" value2="50.0"/>
+				<lessThan value1="@portable_systems_encrypted" value2="75.0"/>
+			</and>	
+		</if>
+		<then>
+			<set name="physical_protection" value="@physical_protection+16.5"/>
+		</then>
+	</rule>
+	<rule name="physical_protection_rule_006">
+		<if>
+			<greaterThanOrEqual value1="@portable_systems_encrypted" value2="75.0"/>
+		</if>
+		<then>
+			<set name="physical_protection" value="@physical_protection+33"/>
+		</then>
+	</rule>
+	
+	<rule name="contingency_planning_rule_001">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@critical_systems_backup" value2="50.0"/>
+				<lessThan value1="@critical_systems_backup" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="contingency_planning" value="@contingency_planning+25.0"/>
+		</then>
+	</rule>
+	<rule name="contingency_planning_rule_002">
+		<if>
+			<greaterThanOrEqual value1="@critical_systems_backup" value2="75.0"/>
+		</if>
+		<then>
+			<set name="contingency_planning" value="@contingency_planning+50.0"/>
+		</then>
+	</rule>
+	<rule name="contingency_planning_rule_003">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@critical_systems_contingency" value2="50.0"/>
+				<lessThan value1="@critical_systems_contingency" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="contingency_planning" value="@contingency_planning+25.0"/>
+		</then>
+	</rule>
+	<rule name="contingency_planning_rule_004">
+		<if>
+			<greaterThanOrEqual value1="@critical_systems_contingency" value2="75.0"/>
+		</if>
+		<then>
+			<set name="contingency_planning" value="@contingency_planning+50.0"/>
+		</then>
+	</rule>
+	
+	<rule name="maintenance_rule_001">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@system_maintenance_restrictions" value2="50.0"/>
+				<lessThan value1="@system_maintenance_restrictions" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+10.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_002">
+		<if>
+			<greaterThanOrEqual value1="@system_maintenance_restrictions" value2="75.0"/>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+20.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_003">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@system_maintenance_logs" value2="50.0"/>
+				<lessThan value1="@system_maintenance_logs" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+10.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_004">
+		<if>
+			<greaterThanOrEqual value1="@system_maintenance_logs" value2="75.0"/>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+20.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_005">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@software_changes_approved" value2="50.0"/>
+				<lessThan value1="@software_changes_approved" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+10.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_006">
+		<if>
+			<greaterThanOrEqual value1="@software_changes_approved" value2="75.0"/>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+20.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_007">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@systems_scanned_for_vulnerabilities" value2="50.0"/>
+				<lessThan value1="@systems_scanned_for_vulnerabilities" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+10.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_008">
+		<if>
+			<greaterThanOrEqual value1="@systems_scanned_for_vulnerabilities" value2="75.0"/>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+20.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_009">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@vulnerable_systems_patched" value2="25.0"/>
+				<lessThan value1="@vulnerable_systems_patched" value2="50.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+10.0"/>
+		</then>
+	</rule>
+	<rule name="maintenance_rule_010">
+		<if>
+			<lessThan value1="@vulnerable_systems_patched" value2="25.0"/>
+		</if>
+		<then>
+			<set name="maintenance" value="@maintenance+20.0"/>
+		</then>
+	</rule>
+	
+	<rule name="data_integrity_rule_001">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@systems_virus_protection" value2="50.0"/>
+				<lessThan value1="@systems_virus_protection" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+10.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_002">
+		<if>
+			<greaterThanOrEqual value1="@systems_virus_protection" value2="75.0"/>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+20.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_003">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@systems_automated_virus_protection" value2="50.0"/>
+				<lessThan value1="@systems_automated_virus_protection" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+10.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_004">
+		<if>
+			<greaterThanOrEqual value1="@systems_automated_virus_protection" value2="75.0"/>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+20.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_005">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@systems_automated_updates" value2="50.0"/>
+				<lessThan value1="@systems_automated_updates" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+10.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_006">
+		<if>
+			<greaterThanOrEqual value1="@systems_automated_updates" value2="75.0"/>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+20.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_007">
+		<if>
+			<and>
+				<greaterThanOrEqual value1="@systems_password_protected" value2="50.0"/>
+				<lessThan value1="@systems_password_protected" value2="75.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+10.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_008">
+		<if>
+			<greaterThanOrEqual value1="@systems_password_protected" value2="75.0"/>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+20.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_009">
+		<if>
+			<and>
+				<greaterThan value1="@passwords_changed" value2="0.0"/>
+				<lessThanOrEqual value1="@passwords_changed" value2="3.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+10.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_010">
+		<if>
+			<and>
+				<greaterThan value1="@passwords_changed" value2="3.0"/>
+				<lessThanOrEqual value1="@passwords_changed" value2="6.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+20.0"/>
+		</then>
+	</rule>
+	<rule name="data_integrity_rule_011">
+		<if>
+			<and>
+				<greaterThan value1="@passwords_changed" value2="6.0"/>
+				<lessThanOrEqual value1="@passwords_changed" value2="12.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="data_integrity" value="@data_integrity+10.0"/>
+		</then>
+	</rule>
+	
+	<rule name="identification_authentication_rule_001">
+		<if>
+			<equal value1="@vendor_passwords_used" value2="0.0"/>
+		</if>
+		<then>
+			<set name="identification_authentication" value="@identification_authentication+33.0"/>
+		</then>
+	</rule>
+	<rule name="identification_authentication_rule_002">
+		<if>
+			<and>
+				<greaterThan value1="@vendor_passwords_used" value2="0.0"/>
+				<lessThan value1="@vendor_passwords_used" value2="5.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="identification_authentication" value="@identification_authentication+16.5"/>
+		</then>
+	</rule>
+	<rule name="identification_authentication_rule_003">
+		<if>
+			<equal value1="@shared_user_ids" value2="0.0"/>
+		</if>
+		<then>
+			<set name="identification_authentication" value="@identification_authentication+33.0"/>
+		</then>
+	</rule>
+	<rule name="identification_authentication_rule_004">
+		<if>
+			<and>
+				<greaterThan value1="@shared_user_ids" value2="0.0"/>
+				<lessThan value1="@shared_user_ids" value2="15.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="identification_authentication" value="@identification_authentication+16.5"/>
+		</then>
+	</rule>
+	<rule name="identification_authentication_rule_005">
+		<if>
+			<and>
+				<greaterThan value1="@password_requirements" value2="1.0"/>
+				<lessThan value1="@password_requirements" value2="4.0"/>
+			</and>
+		</if>
+		<then>
+			<set name="identification_authentication" value="@identification_authentication+33.0"/>
+		</then>
+	</rule>
+	<rule name="identification_authentication_rule_006">
+		<if>
+			<between value="@password_requirements" min="4.0" max="5.0"/>
+		</if>
+		<then>
+			<set name="identification_authentication" value="@identification_authentication+16.5"/>
+		</then>
+	</rule>
+	</ExpertSystem>
+</MeetCI>

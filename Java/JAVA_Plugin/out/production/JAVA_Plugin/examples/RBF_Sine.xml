@@ -1,0 +1,22 @@
+<MeetCI>
+    <MachineLearning>
+        <classification>
+            <datafile>src\data\Sine.txt</datafile>
+            <input>1</input>
+            <output>1</output>
+            <classes>3</classes>
+            <split>0.25</split>
+            <delimiter>string</delimiter>
+            <algorithm>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <RadialBasisFunctionNetwork>
+                    <hiddenNeurons>4</hiddenNeurons>
+                    <outputLayerActivation>Softmax</outputLayerActivation>
+                    <momentum>0.9</momentum>
+                    <epochs>3</epochs>
+                    <learningRate>0.001</learningRate>
+                </RadialBasisFunctionNetwork>
+            </algorithm>
+        </classification>
+    </MachineLearning>
+</MeetCI>

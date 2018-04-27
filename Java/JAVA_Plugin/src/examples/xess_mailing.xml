@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<xess>
+	<predicate name="tautology" value="true"/>
+	
+	<class name="MyClass">
+		<field name="intField" type="int" initialValue="10"/>
+		<field name="floatField" type="float" initialValue="5.5"/>
+		<field name="stringField" type="string" initialValue="a string"/>
+		<field name="booleanField" type="boolean" initialValue="true"/>
+		<field name="charField" type="char" initialValue="c"/>
+		<field name="datetimeField" type="datetime" initialValue="03-30-1975 12:00:00.000-000"/>
+		<field name="dateField" type="date" initialValue="03-30-1975"/>
+		<field name="timeField" type="time" initialValue="12:00:00.000-000"/>
+	</class>
+	
+	<class name="Begat">
+		<field name="father" type="string"/>
+		<field name="mother" type="string"/>
+		<field name="child" type="string"/>
+	</class>
+	
+	<object name="Robert Jr's Parents" instanceOf="Begat">
+		<field name="father" value="Robert Sr"/>
+		<field name="mother" value="Kathleen"/>
+		<field name="child" value="Robert Jr"/>
+	</object>
+	
+	<object name="Stacey's Parents" instanceOf="Begat">
+		<field name="father" value="Robert Sr"/>
+		<field name="mother" value="Kathleen"/>
+		<field name="child" value="Stacey"/>
+	</object>
+
+	<comment>Determines if two people are related by at least one parent.</comment>
+	<rule name="siblings">
+	  <parameter type="Begat" name="arg1"/>
+      <parameter type="Begat" name="arg2"/>
+	  <if>
+	    <or>
+	      <equal term1="arg1.father" term2="arg2.father"/>
+	      <equal term1="arg1.mother" term2="arg2.father"/>
+	    </or>
+	  </if>
+	  <then>
+		<result description="siblings?" value="true"/>
+	  </then>
+	</rule>
+	
+	<comment>Determines if two people are related by exactly one parent.</comment>
+	<rule name="half-siblings">
+	  <parameter type="Begat" name="arg1"/>
+      <parameter type="Begat" name="arg2"/>
+      <if>
+	    <or>
+	      <and>
+	        <equal term1="arg1.father" term2="arg2.father"/>
+	        <notEqual term1="arg1.mother" term2="arg2.father"/>
+	      </and>
+	      <and>
+	        <notEqual term1="arg1.father" term2="arg2.father"/>
+	        <equal term1="arg1.mother" term2="arg2.father"/>
+	      </and>
+	    </or>
+	  </if>
+	  <then>
+		<result description="siblings?" value="true"/>
+	  </then>
+	</rule>
+
+	<rule name="few-children">
+	  <if>
+	    <lessThanOrEqual description="number-of-children" value="1"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="25"/>
+	  </then>
+	</rule>
+  
+    <rule name="some-children">
+	  <if>
+	    <between description="number-of-children" min="2" max="3"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="50"/>
+	  </then>
+	</rule>
+	
+	<rule name="many-children">
+	  <if>
+	    <greaterThanOrEqual description="number-of-children" value="4"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="75"/>
+	  </then>
+	</rule>
+	
+	<rule name="marital-status-single">
+	  <if>
+	  	<equal description="marital-status" value="single"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="0"/>
+	  </then>
+	</rule>
+	
+	<rule name="marital-status-married">
+	  <if>
+	  	<equal description="marital-status" value="married"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="75"/>
+	  </then>
+	</rule>
+	
+	<rule name="marital-status-divorced">
+	  <if>
+	  	<equal description="marital-status" value="divorced"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="25"/>
+	  </then>
+	</rule>
+	
+	<rule name="marital-status-widowed">
+	  <if>
+	  	<equal description="marital-status" value="widowed"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="50"/>
+	  </then>
+	</rule>
+	
+	<rule name="household-income-low">
+	  <if>
+	  	<lessThan description="household-income" value="50000.00"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="0"/>
+	  </then>
+	</rule>
+	
+	<rule name="household-income-medium">
+	  <if>
+	  	<between description="household-income" min="50000.00" max="75000.00"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="25"/>
+	  </then>
+	</rule>
+	
+	<rule name="household-income-high">
+	  <if>
+	  	<greaterThan description="household-income" value="75000.00"/>
+	  </if>
+	  <then>
+	  	<result description="points" value="75"/>
+	  </then>
+	</rule>
+</xess>

@@ -1,0 +1,2243 @@
+<BessDocument>
+	<!-- How many times per year is risk assessment performed? -->
+	<BessFuzzyVariable name="risk-assessment" value="times per year">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="52.1"/>
+		<BessFuzzyTerm name="none">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="6.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="3.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="12.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems are assessed and documented as of this time? -->
+	<BessFuzzyVariable name="risk-system-coverage" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems have been tested for security controls in the past year? -->
+	<BessFuzzyVariable name="control-system-coverage" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems were found to have at least one 
+		security control weakness? -->
+	<BessFuzzyVariable name="control-weaknesses" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="none">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="3.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="2.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="10.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems are certified and accredited? -->
+	<BessFuzzyVariable name="certified-systems" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems follow a documented security plan? -->
+	<BessFuzzyVariable name="documented-plan-systems" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems divide sensitive functions among
+		different individuals? -->
+	<BessFuzzyVariable name="divided-sensitive-functions" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of users have undergone background screening? -->
+	<BessFuzzyVariable name="screened-users" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of deposits and withdrawls of 
+		physical data tapes are logged? -->
+	<BessFuzzyVariable name="data-tapes-logged" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- How many of the following measures are taken to limit
+		physical access to data lines? 
+		(lock, keypad, biometrics, keycard, other) -->
+	<BessFuzzyVariable name="physical-access-restrictions" value="number of">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="5.1"/>
+		<BessFuzzyTerm name="none">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="4.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="3.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="5.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- On what percentage of portable systems has encryption
+		software been installed? -->
+	<BessFuzzyVariable name="portable-systems-encrypted" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of critical systems have backup
+		systems established? -->
+	<BessFuzzyVariable name="critical-systems-backup" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of critical systems have a
+		contingency plan (in case of failure)? -->
+	<BessFuzzyVariable name="critical-systems-contingency" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems have restrictions on who
+		performs maintenance/repairs? -->
+	<BessFuzzyVariable name="system-maintenance-restrictions" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- For what percentage of systems is maintenance activity
+		logged? -->
+	<BessFuzzyVariable name="system-maintenance-logs" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of software changes are documented 
+		and approved? -->
+	<BessFuzzyVariable name="software-changes-approved" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage systems were scanned for vulnerabilities
+		last year? -->
+	<BessFuzzyVariable name="systems-scanned-for-vulnerabilities" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of scanned systems needed to be patched? -->
+	<BessFuzzyVariable name="vulnerable-systems-patched" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems use virus protection? -->
+	<BessFuzzyVariable name="systems-virus-protection" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of virus protected systems use automated
+		virus protection? -->
+	<BessFuzzyVariable name="systems-automated-virus-protection" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of virus protected systems are configured to
+		update virus protection software automatically? -->
+	<BessFuzzyVariable name="systems-automated-updates" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems are password protected? -->
+	<BessFuzzyVariable name="systems-password-protected" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="75.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- How many times per year are passwords required
+		to be changed? -->
+	<BessFuzzyVariable name="passwords-changed" value="times per year">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="365.1"/>
+		<BessFuzzyTerm name="never">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="sometimes">
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="7.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="frequently">
+			<BessXY>
+				<BessDouble name="x" value="6.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="12.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of systems use default vendor passwords? -->
+	<BessFuzzyVariable name="vendor-passwords-used" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="5.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="15.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="40.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="60.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="80.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- What percentage of user IDs are shared by more than one person? -->
+	<BessFuzzyVariable name="shared-user-ids" value="percent">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="100.1"/>
+		<BessFuzzyTerm name="none">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="20.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="15.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="95.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="some">
+			<BessXY>
+				<BessDouble name="x" value="12.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="17.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="23.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	<!-- How many of the following are required for passwords?
+		(upper case letters, lower case letters, numbers, symbols, other) -->
+	<BessFuzzyVariable name="password-requirements" value="number of">
+		<BessDouble name="min" value="-0.1"/>
+		<BessDouble name="max" value="5.1"/>
+		<BessFuzzyTerm name="none">
+			<BessXY>
+				<BessDouble name="x" value="0.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="few">
+			<BessXY>
+				<BessDouble name="x" value="1.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="4.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+		<BessFuzzyTerm name="many">
+			<BessXY>
+				<BessDouble name="x" value="3.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="5.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+	</BessFuzzyVariable>
+	
+	<!-- ratings -->
+	<BessFuzzyVariable name="risk" value="risk-rating">
+		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="33.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="66.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	<BessFuzzyVariable name="security-controls" value="security-controls-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="33.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="66.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	<BessFuzzyVariable name="certification-planning" value="certification-planning-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="33.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="66.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	<BessFuzzyVariable name="personnel-security" value="personnel-security-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="10.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="40.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	<BessFuzzyVariable name="physical-protection" value="physical-protection-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="10.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="40.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	<BessFuzzyVariable name="contingency-planning" value="contingency-planning-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="10.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="40.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+   			<BessXY>
+    			<BessDouble name="x" value="8.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="25.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="42.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	<BessFuzzyVariable name="maintenance" value="maintenance-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="10.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="40.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	<BessFuzzyVariable name="data-integrity" value="data-integrity-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="10.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="40.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	<BessFuzzyVariable name="identification-authentication" value="identification-authentication-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="10.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="40.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	 <BessFuzzyVariable name="overall-security" value="overall-security-rating">
+ 		<BessDouble name="min" value="-0.1"/>
+  		<BessDouble name="max" value="100.1"/>
+  		<BessFuzzyTerm name="low">
+   			<BessXY>
+    			<BessDouble name="x" value="1.0"/>
+    			<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+    			<BessDouble name="x" value="10.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="high">
+   			<BessXY>
+    			<BessDouble name="x" value="40.0"/>
+    			<BessDouble name="y" value="0.0"/>
+   			</BessXY>
+   			<BessXY>
+    			<BessDouble name="x" value="99.0"/>
+    			<BessDouble name="y" value="1.0"/>
+   			</BessXY>
+  		</BessFuzzyTerm>
+  		<BessFuzzyTerm name="medium">
+			<BessXY>
+				<BessDouble name="x" value="30.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="50.0"/>
+				<BessDouble name="y" value="1.0"/>
+			</BessXY>
+			<BessXY>
+				<BessDouble name="x" value="70.0"/>
+				<BessDouble name="y" value="0.0"/>
+			</BessXY>
+		</BessFuzzyTerm>
+ 	</BessFuzzyVariable>
+ 	
+ 	<!-- rules -->
+	<BessCompoundFuzzyRule name="risk-assessment-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk-assessment" value="none"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="risk" value="very low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk-assessment" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="risk" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk-assessment" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="risk" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk-system-coverage" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="risk" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk-system-coverage" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="risk" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk-system-coverage" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="risk" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="control-assessment-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="control-system-coverage" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="security-controls" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="control-system-coverage" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="security-controls" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="control-weaknesses" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="security-controls" value="very low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="control-weaknesses" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="security-controls" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="control-weaknesses" value="none"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="security-controls" value="very high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="certification-planning-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="certified-systems" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="certification-planning" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="certified-systems" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="certification-planning" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="certified-systems" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="certification-planning" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="documented-plan-systems" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="certification-planning" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="documented-plan-systems" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="certification-planning" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="documented-plan-systems" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="certification-planning" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="personnel-security-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="divided-sensitive-functions" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="personnel-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="divided-sensitive-functions" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="personnel-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="divided-sensitive-functions" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="personnel-security" value="very low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="screened-users" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="personnel-security" value="very low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="screened-users" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="personnel-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="screened-users" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="personnel-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="physical-protection-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="data-tapes-logged" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="physical-protection" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="physical-access-restrictions" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="physical-protection" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="portable-systems-encrypted" value="few"/> 
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="physical-protection" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="data-tapes-logged" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="physical-protection" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="physical-access-restrictions" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="physical-protection" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="portable-systems-encrypted" value="many"/> 
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="physical-protection" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="contingency-planning-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="critical-systems-backup" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="contingency-planning" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="critical-systems-backup" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="contingency-planning" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="critical-systems-backup" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="contingency-planning" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="critical-systems-contingency" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="contingency-planning" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="critical-systems-contingency" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="contingency-planning" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="critical-systems-contingency" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="contingency-planning" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="maintenance-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="system-maintenance-restrictions" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="system-maintenance-restrictions" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="system-maintenance-restrictions" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="system-maintenance-logs" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="system-maintenance-logs" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="system-maintenance-logs" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="software-changes-approved" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="software-changes-approved" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="software-changes-approved" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-scanned-for-vulnerabilities" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-scanned-for-vulnerabilities" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-scanned-for-vulnerabilities" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="vulnerable-systems-patched" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="vulnerable-systems-patched" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="vulnerable-systems-patched" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="maintenance" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="data-integrity-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-virus-protection" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-virus-protection" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-virus-protection" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-automated-virus-protection" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-automated-virus-protection" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-automated-virus-protection" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-automated-updates" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-automated-updates" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-automated-updates" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-password-protected" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-password-protected" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="systems-password-protected" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>	
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="passwords-changed" value="never"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="very low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="passwords-changed" value="sometimes"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="passwords-changed" value="frequently"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="data-integrity" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="identification-authentication-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="vendor-passwords-used" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="vendor-passwords-used" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="vendor-passwords-used" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="very low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="shared-user-ids" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="shared-user-ids" value="some"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="shared-user-ids" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="very low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="password-requirements" value="none"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="very low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="password-requirements" value="few"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="password-requirements" value="many"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="identification-authentication" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+	
+	<BessCompoundFuzzyRule name="overall-security-rule">
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="risk" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="security-controls" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="security-controls" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="security-controls" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="certification-planning" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="certification-planning" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+		<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="certification-planning" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+				<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="personnel-security" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="personnel-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="personnel-security" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="physical-protection" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="physical-protection" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="physical-protection" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="contingency-planning" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="contingency-planning" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="contingency-planning" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="maintenance" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="maintenance" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="maintenance" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="data-integrity" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="data-integrity" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="data-integrity" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="identification-authentication" value="low"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="low"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="identification-authentication" value="medium"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="medium"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+		<BessFuzzyRule>
+			<BessFuzzyValueSet name="antecedent">
+	   			<BessFuzzyValue name="identification-authentication" value="high"/>
+	  		</BessFuzzyValueSet>
+	  		<BessFuzzyValueSet name="conclusion">
+	   			<BessFuzzyValue name="overall-security" value="high"/>
+	  		</BessFuzzyValueSet>
+		</BessFuzzyRule>
+	</BessCompoundFuzzyRule>
+</BessDocument>

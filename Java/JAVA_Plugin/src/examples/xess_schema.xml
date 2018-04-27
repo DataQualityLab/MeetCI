@@ -1,0 +1,245 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- comments -->
+  <xsd:element name="comment" type="xsd:string"/>
+
+  <!-- clause elements -->
+  <xsd:element name="clause" type="clauseType"/>
+  <xsd:element name="greaterThan" type="greaterThanType" substitutionGroup="clause"/>
+  <xsd:element name="greaterThanOrEqual" type="greaterThanOrEqualType" substitutionGroup="clause"/>
+  <xsd:element name="lessThan" type="lessThanType" substitutionGroup="clause"/>
+  <xsd:element name="lessThanOrEqual" type="lessThanOrEqualType" substitutionGroup="clause"/>
+  <xsd:element name="equal" type="equalType" substitutionGroup="clause"/>
+  <xsd:element name="notEqual" type="notEqualType" substitutionGroup="clause"/>
+  <xsd:element name="between" type="betweenType" substitutionGroup="clause"/>
+  <xsd:element name="notBetween" type="betweenType" substitutionGroup="clause"/>
+  <xsd:element name="or" type="orType" substitutionGroup="clause"/>
+  <xsd:element name="and" type="andType" substitutionGroup="clause"/>
+
+  <xsd:complexType name="clauseType" abstract="true"/>
+
+  <xsd:complexType name="greaterThanType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:attribute name="value1" type="xsd:string"/>
+        <xsd:attribute name="value2" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="greaterThanOrEqualType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:attribute name="value1" type="xsd:string"/>
+        <xsd:attribute name="value2" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="lessThanType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:attribute name="value1" type="xsd:string"/>
+        <xsd:attribute name="value2" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="lessThanOrEqualType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:attribute name="value1" type="xsd:string"/>
+        <xsd:attribute name="value2" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="equalType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:attribute name="value1" type="xsd:string"/>
+        <xsd:attribute name="value2" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="notEqualType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:attribute name="value1" type="xsd:string"/>
+        <xsd:attribute name="value2" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="betweenType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:attribute name="value" type="xsd:string"/>
+        <xsd:attribute name="min" type="xsd:string"/>
+        <xsd:attribute name="max" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="notBetweenType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:attribute name="value" type="xsd:string"/>
+        <xsd:attribute name="min" type="xsd:string"/>
+        <xsd:attribute name="max" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="orType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:sequence>
+          <xsd:element ref="clause" minOccurs="2" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="andType">
+    <xsd:complexContent>
+      <xsd:extension base="clauseType">
+        <xsd:sequence>
+          <xsd:element ref="clause" minOccurs="2" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <!-- fact types -->
+  
+  <xsd:element name="fact" type="factType"/>
+  <xsd:element name="predicate" type="predicateType" substitutionGroup="fact"/>
+  <xsd:element name="struct" type="structType" substitutionGroup="fact"/>
+  <xsd:element name="instance" type="instanceType" substitutionGroup="fact"/>
+  
+  <xsd:complexType name="factType" abstract="true">
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="predicateType">
+    <xsd:complexContent>
+      <xsd:extension base="factType">
+        <xsd:attribute name="value" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="structType">
+    <xsd:complexContent>
+      <xsd:extension base="factType">
+        <xsd:sequence>
+          <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
+          <xsd:element name="field" minOccurs="1" maxOccurs="unbounded">
+            <xsd:complexType>
+              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string" use="optional"/>
+              <xsd:attribute name="initialValue" type="xsd:string" use="optional"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="instanceType">
+    <xsd:complexContent>
+      <xsd:extension base="factType">
+        <xsd:sequence>
+          <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
+          <xsd:element name="field" minOccurs="0" maxOccurs="unbounded">
+            <xsd:complexType>
+              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="value" type="xsd:string" use="optional"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="type" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <!-- main elements -->
+
+  <xsd:element name="action" type="actionType"/>
+  <xsd:element name="set" type="setType" substitutionGroup="action"/>
+  <xsd:element name="runRule" type="runRuleType" substitutionGroup="action"/>
+  
+  <xsd:complexType name="actionType" abstract="true"/>
+  
+  <xsd:complexType name="setType">
+    <xsd:complexContent>
+      <xsd:extension base="actionType">
+        <xsd:attribute name="name" type="xsd:string"/>
+        <xsd:attribute name="value" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="runRuleType">
+    <xsd:complexContent>
+      <xsd:extension base="actionType">
+        <xsd:sequence>
+          <xsd:element name="argument" minOccurs="0" maxOccurs="unbounded">
+            <xsd:complexType>
+              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="value" type="xsd:string" use="optional"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="xess" type="xessType"/>
+
+  <xsd:complexType name="xessType">
+    <xsd:sequence>
+      <xsd:element ref="comment" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element ref="fact" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="rule" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+          	  <xsd:complexType>
+          		<xsd:attribute name="name" type="xsd:string"/>
+          		<xsd:attribute name="type" type="xsd:string"/>
+          	  </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="if">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="clause"/>
+                </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="then">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="action"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="else" minOccurs="0" maxOccurs="1">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="action"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+          <xsd:attribute name="name" type="xsd:string" use="optional"/>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>  
+
+</xsd:schema>

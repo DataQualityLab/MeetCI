@@ -1,0 +1,23 @@
+<MeetCI>
+  <MachineLearning>
+    <classification>
+      <datafile>string</datafile>
+      <input>3</input>
+      <output>3</output>
+      <classes>3</classes>
+      <split>1000.00</split>
+      <delimiter>string</delimiter>
+      <algorithm>
+        <MultiLayerPerceptron>
+          <inputLayerActivation>Sin</inputLayerActivation>
+          <hiddenLayerActivation>Sgn</hiddenLayerActivation>
+          <hiddenLayers>string</hiddenLayers>
+          <outputLayerActivation>Sigmoid</outputLayerActivation>
+          <momentum>1000.00</momentum>
+          <epochs>3</epochs>
+          <learningRate>1000.00</learningRate>
+        </MultiLayerPerceptron>
+      </algorithm>
+    </classification>
+  </MachineLearning>
+</MeetCI>
